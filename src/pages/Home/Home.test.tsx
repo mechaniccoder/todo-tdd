@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
@@ -7,6 +7,7 @@ import Home from "./Home";
 const renderHome = () => {
   return render(<Home />);
 };
+jest.useFakeTimers("legacy");
 
 describe("Home", () => {
   it("snapshot", () => {
@@ -19,4 +20,14 @@ describe("Home", () => {
   //   userEvent.click(screen.getByText(/go to/));
   //   expect(location.pathname).toBe("/signup");
   // });
+  it("render <p> tag onclick", () => {
+    renderHome();
+    userEvent.click(screen.getByText("submit"));
+    expect(setTimeout).toHaveBeenCalledTimes(1);
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
+
+    expect(screen.getByText("lorem")).toBeInTheDocument();
+  });
 });
