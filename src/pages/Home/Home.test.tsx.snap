@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home snapshot 1`] = `
+<div>
+  <div>
+    <div>
+      go to sign up
+    </div>
+  </div>
+</div>
+`;
