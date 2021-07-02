@@ -23,6 +23,9 @@ exports[`Router snapshots App 1`] = `
     <div>
       go to sign up
     </div>
+    <button>
+      submit
+    </button>
   </div>
 </div>
 `;
