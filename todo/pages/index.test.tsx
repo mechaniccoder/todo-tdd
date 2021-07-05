@@ -1,7 +1,6 @@
-describe("index.tsx", () => {
-  it("test", () => {
-    expect(1).toBe(1);
-  });
-});
+import { render } from '@testing-library/react';
+import Index from './index';
+
+describe('index.tsx', () => {});
 
 export {};
