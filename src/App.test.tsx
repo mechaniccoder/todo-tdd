@@ -25,12 +25,12 @@ describe("Router", () => {
     expect(screen.getByText("Sign In")).toBeInTheDocument();
   });
 
-  it("navigates to Home when user clicks Link", () => {
-    renderApp();
-    userEvent.click(screen.getByText("Home"));
-    expect(location.pathname).toBe("/");
-    expect(screen.getByText(/go to sign up/)).toBeTruthy();
-  });
+  // it("navigates to Home when user clicks Link", () => {
+  //   renderApp();
+  //   userEvent.click(screen.getByText("Home"));
+  //   expect(location.pathname).toBe("/");
+  //   expect(screen.getByText(/go to sign up/)).toBeTruthy();
+  // });
 
   it("navigates to Sign Up when user clicks Link", () => {
     renderApp();

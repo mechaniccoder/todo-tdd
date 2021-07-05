@@ -20,6 +20,9 @@ exports[`Router snapshots App 1`] = `
     </a>
   </div>
   <div>
+    <h1>
+      Home Page
+    </h1>
     <div>
       go to sign up
     </div>

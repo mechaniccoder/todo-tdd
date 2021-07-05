@@ -3,6 +3,9 @@
 exports[`Home snapshot 1`] = `
 <div>
   <div>
+    <h1>
+      Home Page
+    </h1>
     <div>
       go to sign up
     </div>
