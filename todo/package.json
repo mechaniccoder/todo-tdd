@@ -10,9 +10,12 @@
     "test": "jest --watchAll --coverage"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.0",
     "next": "11.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-redux": "^7.2.4",
+    "redux-mock-store": "^1.5.4"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -20,6 +23,7 @@
     "@testing-library/user-event": "^13.1.9",
     "@types/jest": "^26.0.23",
     "@types/react": "17.0.13",
+    "@types/redux-mock-store": "^1.0.2",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
     "jest": "^27.0.6",
