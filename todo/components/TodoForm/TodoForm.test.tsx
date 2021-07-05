@@ -35,7 +35,6 @@ describe('TodoForm', () => {
       const { getByRole, getByPlaceholderText } = render(<TodoForm />);
       const inputElem = getByPlaceholderText('할 일을 입력하세요.') as HTMLInputElement;
       userEvent.type(inputElem, 'TDD를 배우자.');
-      console.log(inputElem.value);
 
       const btnElem = getByRole('button') as HTMLButtonElement;
       userEvent.click(btnElem);
