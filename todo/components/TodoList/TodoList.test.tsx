@@ -18,7 +18,7 @@ describe('TodoList', () => {
       );
       const { container } = render(<TodoList />);
       expect(container).toHaveTextContent('TDD를 배우자');
-      expect(container).toHaveTextContent('TDD를 배우자');
+      expect(container).toHaveTextContent('Next를 배우자');
     });
   });
 });
