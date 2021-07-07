@@ -1,4 +1,4 @@
-import { configureStore, Store } from '@reduxjs/toolkit';
+import { configureStore, Dispatch, Store } from '@reduxjs/toolkit';
 import { useMemo } from 'react';
 import TodoReducer from './TodoSlice';
 
@@ -40,7 +40,5 @@ export function useStore(initialState: any) {
   return store;
 }
 
-const state = initStore(null).getState();
-const dispatch = initStore(null).dispatch;
-export type RootState = typeof state;
-export type AppDispatch = typeof dispatch;
+export type RootState = ReturnType<typeof initStore>;
+export type AppDispatch = Dispatch;

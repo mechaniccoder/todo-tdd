@@ -1,5 +1,7 @@
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import TodoTemplate from 'templates/main/TodoTemplate';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -12,6 +14,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <TodoTemplate />
       </main>
 
       <footer className={styles.footer}>
@@ -29,3 +32,13 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  return {
+    props: {
+      initialReduxState: {
+        todo: [{ text: 'tdd를 배우자.', done: false }],
+      },
+    },
+  };
+};
