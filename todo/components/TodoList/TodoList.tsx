@@ -1,3 +1,4 @@
+import TodoListItem from 'components/TodoListItem/TodoListItem';
 import { useAppSelector } from 'hooks/useReactRedux';
 
 const TodoList = () => {
@@ -5,10 +6,7 @@ const TodoList = () => {
   return (
     <ul>
       {todo.map((t) => (
-        <li key={t.text}>
-          <input type="checkbox" defaultChecked={t.done} />
-          <p>{t.text}</p>
-        </li>
+        <TodoListItem key={t.text} todo={t} />
       ))}
     </ul>
   );
