@@ -1,4 +1,5 @@
 module.exports = {
+  setupFiles: ['jest-plugin-context/setup'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testPathIgnorePatterns: ['<rootDir>/.next', '<rootDir>/node_modules'],
   snapshotResolver: '<rootDir>/config/snapshotResolver.js',
