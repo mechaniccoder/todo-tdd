@@ -7,7 +7,7 @@ interface Props {
 const TodoListItem: React.FC<Props> = ({ todo }) => {
   const { text, done } = todo;
   return (
-    <li key={text}>
+    <li>
       <input type="checkbox" defaultChecked={done} data-testid="done" />
       <p>{text}</p>
     </li>
