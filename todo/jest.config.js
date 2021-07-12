@@ -13,4 +13,5 @@ module.exports = {
     '^components/(.*)': '<rootDir>/components/$1',
     '^hooks/(.*)': '<rootDir>/hooks/$1',
   },
+  testRegex: '\\.test\\.[jt]sx?$',
 };
