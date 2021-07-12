@@ -31,8 +31,7 @@ export const fetchOneUser = createAsyncThunk<fetchOneUserData, string, { state: 
       const res = await axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`);
       return res.data;
     } catch (err) {
-      console.log(err);
-      rejectWithValue(err.response.data.message);
+      return rejectWithValue(err);
     }
   },
 );
