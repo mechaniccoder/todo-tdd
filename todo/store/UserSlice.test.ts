@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 import axios, { AxiosAdapter } from 'axios';
 import { AnyAsyncThunk } from '@reduxjs/toolkit/dist/matchers';
 import { AnyAction } from '@reduxjs/toolkit';
+import UserSlice from './UserSlice';
 
 jest.mock('axios');
 
@@ -58,5 +59,48 @@ describe('test thunk', () => {
         },
       }),
     );
+  });
+});
+
+describe('thunk affects store', () => {
+  it('should update loading state', () => {
+    const expectedState = {
+      fetchOneUser: {
+        loading: true,
+        data: null,
+        error: null,
+      },
+    };
+    const state = UserSlice(initialState, { type: fetchOneUser.pending.type });
+    expect(state).toEqual(expectedState);
+  });
+  it('should update fulfilled state', () => {
+    const expectedState = {
+      fetchOneUser: {
+        loading: false,
+        data: { username: 'seunghwan', email: 'seunghwan@orbisai.co' },
+        error: null,
+      },
+    };
+    const state = UserSlice(initialState, {
+      type: fetchOneUser.fulfilled.type,
+      payload: { username: 'seunghwan', email: 'seunghwan@orbisai.co' },
+    });
+    expect(state).toEqual(expectedState);
+  });
+
+  it('should update rejected state', () => {
+    const expectedState = {
+      fetchOneUser: {
+        loading: false,
+        data: null,
+        error: { message: 'error' },
+      },
+    };
+    const state = UserSlice(initialState, {
+      type: fetchOneUser.rejected.type,
+      payload: { message: 'error' },
+    });
+    expect(state).toEqual(expectedState);
   });
 });
