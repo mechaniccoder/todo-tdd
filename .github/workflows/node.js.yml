@@ -28,7 +28,6 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
     - run: echo "success node version"
     - run: npm ci
       working-directory: ${{env.working-directory}}
