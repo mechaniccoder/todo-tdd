@@ -42,3 +42,11 @@ moduleNameMapper: {
 ```
 
 맨 앞을 나타내는 정규표현식인 `^`를 처음에는 안 써줬었는데 계속 path를 못 찾는 에러가 발생했다. `^`를 써주니 $1 그룹도 잘 찾고 에러없이 테스트 파일을 실행시킬 수 있었다.
+
+### createAsyncThunk 테스트 방법
+
+- redux toolkit에서는 비동기를 위해 createAsyncThunk라는 편리한 api를 제공한다. 그러나 이를 테스트하는 방법을 알기위해서 굉장히 애를 먹었다. 드디어 테스트하는 방법을 알아냈고 이를 기록해놓으려 한다. 비동기 테스트를 하기 위해서 난 redux-mock-store 라이브러리를 활용했다. 비동기 작업이 시작되면 크게 두가지 시나리오를 가진다.
+
+첫번째, pending -> fulfilled pending -> rejected이다. 따라서 이 두가지 시나리오에 대해 맞는 액션이 dispatch되었는지를 확인해주면 된다. thunk 작업 중간에 실제 api를 호출하는 경우가 있는데 이 함수를 jest로 mocking해주자.
+
+실제로 어떻게 테스트 코드를 작성하는지 확인하려면 `UserSlice.test.ts`를 참고하면 된다.
