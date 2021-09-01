@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watchAll --coverage"
+    "test": "jest",
+    "test:watch": "jest --watchAll --coverage"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",
