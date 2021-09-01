@@ -40,5 +40,6 @@ export function useStore(initialState: any) {
   return store;
 }
 
-export type RootState = ReturnType<typeof initStore>;
+type ReduxStore = ReturnType<typeof initStore>;
+export type RootState = ReturnType<ReduxStore['getState']>;
 export type AppDispatch = Dispatch;
